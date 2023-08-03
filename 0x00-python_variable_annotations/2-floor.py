@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-a function that type-annotated concat
+a function  that types annotated floor
 """
 
 
-def concat(str1: str, str2: str) -> str:
+def floor(n: float) -> int:
     """
-    function to concat two strings
+    return floor of the number
     """
-    return str1 + str2
+    return int(n)
 

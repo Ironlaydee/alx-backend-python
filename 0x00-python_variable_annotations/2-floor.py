@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
-'''my third pva module.
-'''
+"""
+a function that type-annotated concat
+"""
 
 
-def floor(a: float) -> int:
-    '''floor of a floating-point number.
-    '''
-        return int(a)
+def concat(str1: str, str2: str) -> str:
+    """
+    function to concat two strings
+    """
+    return str1 + str2
+

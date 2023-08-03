@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-'''my second pva module.
-'''
+"""
+a function that type-annotated concat
+"""
 
 
 def concat(str1: str, str2: str) -> str:
-    '''should concatenate two strings.
-    '''
+    """
+    function to concat two strings
+    """
     return str1 + str2
 

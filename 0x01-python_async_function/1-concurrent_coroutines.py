@@ -1,20 +1,16 @@
 #!/usr/bin/env python3
 '''execute multiple coroutines at the same time with async
 '''
+from typing import List
 import asyncio
-from typing import list
-
-
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
-    ''' Executes wait_random n times'''
-    delay_list = []
-    i = 0
-
-    while i < n:
-        delay_list.append(await wait_random(max_delay))
-        i += 1
-
-    return sorted(delay_list)
+"""Spawns wait_random n times with the specified max_delay,
+and returns the list of all the delays (float values)
+"""
+    futures = [wait_random(max_delay) for _ in range(n)]
+    futures = asyncio.as_completed(futures)
+    delays = [await future for future in futures]
+    return delays

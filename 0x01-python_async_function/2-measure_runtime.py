@@ -21,4 +21,3 @@ if __name__ == "__main__":
     max_delay = 5  # Maximum delay value
     average_runtime = asyncio.run(measure_time(n, max_delay))
     print(f"Average runtime per iteration: {average_runtime:.4f} seconds")
-

@@ -1,20 +1,15 @@
 #!/usr/bin/env python3
-'''change the code into a new function.
-'''
-import asyncio
+"""take the code from somwhere and change it
+into a new function
+"""
 from typing import List
+import asyncio
+task_wait_random = __import__('3-tasks').task_wait_random
 
 
 async def task_wait_n(n: int, max_delay: int) -> List[float]:
-    '''Executes task_wait_random n times.
-    '''
-    modified_random = __import__('4-tasks').task_wait_random
-
-    delay_list = []
-    i = 0
-
-    while i < n:
-        delay_list.append(await modified_random(max_delay))
-        i += 1
-
-    return sorted(delay_list)
+    """Sexcept task_wait_random is being called."""
+    futures = [task_wait_random(max_delay) for _ in range(n)]
+    futures = asyncio.as_completed(futures)
+    delays = [await future for future in futures]
+    return delays

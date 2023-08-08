@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-'''Import async comprehension from the previous file and write a measure runtime coroutine that will execute async comprehension four times in parallel using asyncio.gather.
+'''This is task 2.
 '''
 import asyncio
 import time

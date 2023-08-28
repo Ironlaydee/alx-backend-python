@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-""" 
-unittest for utils
-"""
+""" Unittest test for utils access nested map """
 import unittest
 from utils import access_nested_map, get_json, memoize
 from parameterized import parameterized
